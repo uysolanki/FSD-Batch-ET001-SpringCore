@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   
+    <bean id="e1" class="com.enumtech.model.Engine" scope="singleton">
+    	<constructor-arg value="1000"></constructor-arg>
+    	<constructor-arg value="Electric"></constructor-arg>
+    	<constructor-arg value="Tesla"></constructor-arg>
+    	<constructor-arg value="100.0"></constructor-arg>
+    </bean>
+    
+   
+    <bean id="e2" class="com.enumtech.model.Engine" scope="prototype">
+    	<property name="engineType">
+    		<value>Petrol</value>
+    	</property>
+    	
+    	<property name="engineCC">
+    		<value>2000</value>
+    	</property>
+    	
+    	<property name="engineMfgName">
+    		<value>Honda</value>
+    	</property>
+    	
+    	<property name="engineCost">
+    		<value>200.0</value>
+    	</property>
+    </bean>
+    
+    
+     <bean id="g1" class="com.enumtech.model.Gear">
+    	<constructor-arg value="7"></constructor-arg>
+    	<constructor-arg value="Tata"></constructor-arg>
+    	<constructor-arg value="50.0"></constructor-arg>
+    </bean>
+    
+
+    <bean id="g2" class="com.enumtech.model.Gear">
+    	<property name="gearLever">
+    		<value>8</value>
+    	</property>
+    	
+    	<property name="gearMfg">
+    		<value>Mahindra</value>
+    	</property>
+    	
+    	<property name="gearPrice">
+    		<value>60.0</value>
+    	</property>
+    </bean>
+   
+     <bean id="c1" class="com.enumtech.model.Car">
+    	<constructor-arg value="Tesla"></constructor-arg>
+    	<constructor-arg value="S"></constructor-arg>
+    	<constructor-arg value="White"></constructor-arg>
+    	<constructor-arg value="1000.0"></constructor-arg>
+    	<constructor-arg ref="e1"></constructor-arg>
+    	<constructor-arg ref="g1"></constructor-arg>
+    </bean>
+   
+   <!--  <bean id="c2" class="com.enumtech.model.Car">
+    	<property name="carMfgName">
+    		<value>Toyota</value>
+    	</property>
+    	
+    	<property name="carModelName">
+    		<value>Fortuner</value>
+    	</property>
+    	
+    	<property name="carColor">
+    		<value>Black</value>
+    	</property>
+    	
+    	<property name="carPrice">
+    		<value>2000.0</value>
+    	</property>
+    	
+    	<property name="engine" ref="e2"></property>
+    	
+    	<property name="gear" ref="g2"></property>
+   
+    </bean> -->
+</beans>
+
+    
