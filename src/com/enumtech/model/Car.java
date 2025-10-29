@@ -1,5 +1,8 @@
 package com.enumtech.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Car {
 
 			private String carMfgName;
@@ -7,8 +10,12 @@ public class Car {
 			private String carColor;
 			private double carPrice;
 			
-			
+			@Autowired         //byType
+			@Qualifier("e2")   //byName
 			private Engine engine;
+			
+			@Autowired
+			@Qualifier("g2")
 			private Gear gear;
 			
 			public Car() {}
@@ -20,6 +27,13 @@ public class Car {
 				this.carPrice = carPrice;
 				this.engine = engine;
 				this.gear = gear;
+			}
+			
+			public Car(String carMfgName, String carModelName, String carColor, double carPrice) {
+				this.carMfgName = carMfgName;
+				this.carModelName = carModelName;
+				this.carColor = carColor;
+				this.carPrice = carPrice;
 			}
 			public String getCarMfgName() {
 				return carMfgName;

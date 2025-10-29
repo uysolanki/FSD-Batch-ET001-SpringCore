@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:context="http://www.springframework.org/schema/context"
@@ -6,6 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <context:annotation-config />
    
     <bean id="e1" class="com.enumtech.model.Engine" scope="singleton">
     	<constructor-arg value="1000"></constructor-arg>
@@ -33,6 +35,26 @@
     	</property>
     </bean>
     
+    <bean id="e3" name="engine" class="com.enumtech.model.Engine" scope="singleton">
+    	<constructor-arg value="1500"></constructor-arg>
+    	<constructor-arg value="Diesel"></constructor-arg>
+    	<constructor-arg value="Volvo"></constructor-arg>
+    	<constructor-arg value="150.0"></constructor-arg>
+    </bean>
+    
+    <bean id="e4" class="com.enumtech.model.Engine" scope="singleton">
+    	<constructor-arg value="1000"></constructor-arg>
+    	<constructor-arg value="Electric"></constructor-arg>
+    	<constructor-arg value="Tesla"></constructor-arg>
+    	<constructor-arg value="100.0"></constructor-arg>
+    </bean>
+    
+    <bean id="e5" class="com.enumtech.model.Engine" scope="singleton">
+    	<constructor-arg value="1000"></constructor-arg>
+    	<constructor-arg value="Electric"></constructor-arg>
+    	<constructor-arg value="Tesla"></constructor-arg>
+    	<constructor-arg value="100.0"></constructor-arg>
+    </bean>
     
      <bean id="g1" class="com.enumtech.model.Gear">
     	<constructor-arg value="7"></constructor-arg>
@@ -55,6 +77,26 @@
     	</property>
     </bean>
    
+    
+   
+    <bean id="gear" class="com.enumtech.model.Gear">
+    	<constructor-arg value="12"></constructor-arg>
+    	<constructor-arg value="BMW"></constructor-arg>
+    	<constructor-arg value="100.0"></constructor-arg>
+    </bean>
+    
+     <bean id="g4" class="com.enumtech.model.Gear">
+    	<constructor-arg value="7"></constructor-arg>
+    	<constructor-arg value="Tata"></constructor-arg>
+    	<constructor-arg value="50.0"></constructor-arg>
+    </bean>
+    
+     <bean id="g5" class="com.enumtech.model.Gear">
+    	<constructor-arg value="7"></constructor-arg>
+    	<constructor-arg value="Tata"></constructor-arg>
+    	<constructor-arg value="50.0"></constructor-arg>
+    </bean>
+    
      <bean id="c1" class="com.enumtech.model.Car">
     	<constructor-arg value="Tesla"></constructor-arg>
     	<constructor-arg value="S"></constructor-arg>
@@ -63,8 +105,9 @@
     	<constructor-arg ref="e1"></constructor-arg>
     	<constructor-arg ref="g1"></constructor-arg>
     </bean>
-   
-   <!--  <bean id="c2" class="com.enumtech.model.Car">
+    
+    
+  <bean id="c2" class="com.enumtech.model.Car">
     	<property name="carMfgName">
     		<value>Toyota</value>
     	</property>
@@ -82,10 +125,23 @@
     	</property>
     	
     	<property name="engine" ref="e2"></property>
-    	
     	<property name="gear" ref="g2"></property>
    
-    </bean> -->
+    </bean>
+    
+    <bean id="c3" class="com.enumtech.model.Car" autowire="byName">
+    	<constructor-arg value="Audi"></constructor-arg>
+    	<constructor-arg value="Q3"></constructor-arg>
+    	<constructor-arg value="Red"></constructor-arg>
+    	<constructor-arg value="3000.0"></constructor-arg>
+    </bean>
+    
+     <bean id="s1" class="com.enumtech.model.Student"> init-method="morning" destroy-method="night">
+    	<constructor-arg value="18"></constructor-arg>
+    	<constructor-arg value="Virat"></constructor-arg>
+    	<constructor-arg value="78.5"></constructor-arg>
+    </bean>
 </beans>
 
     
+ -->
